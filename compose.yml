@@ -1,0 +1,28 @@
+services:
+
+  api:
+    image: denoland/deno:latest
+    volumes:
+      - ./services/api:/app
+    ports:
+      - 8000:8000
+    working_dir: /app
+    command: deno task start
+
+  app-vue:
+    image: denoland/deno:latest
+    volumes:
+      - ./services/app-vue:/app
+    ports:
+      - 5173:5173
+    working_dir: /app
+    command: deno task dev
+
+  styleguide-vue:
+    image: node:lts-alpine
+    volumes:
+      - ./services/styleguide-vue:/app
+    ports:
+      - 6006:6006
+    working_dir: /app
+    command: npm run storybook
