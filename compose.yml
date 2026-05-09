@@ -7,7 +7,7 @@ services:
     ports:
       - 8000:8000
     working_dir: /app
-    command: deno task start
+    command: deno task dev
 
   app-vue:
     image: denoland/deno:latest
