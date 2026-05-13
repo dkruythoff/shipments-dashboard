@@ -1,9 +1,34 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { vTableProps } from "./vTable.types";
+
+defineProps<vTableProps>();
+</script>
 
 <template>
   <table>
-    <thead></thead>
-    <tbody></tbody>
-    <tfoot></tfoot>
+    <thead v-if="head?.length">
+      <tr
+        v-for="(row, rowIndex) in head"
+        :key="String(row?.key) || `row-head-${rowIndex}`"
+      >
+        <td v-for="cell in row.cells">{{ cell }}</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        v-for="(row, rowIndex) in body"
+        :key="String(row?.key) || `row-body-${rowIndex}`"
+      >
+        <td v-for="cell in row.cells">{{ cell }}</td>
+      </tr>
+    </tbody>
+    <tfoot v-if="foot?.length">
+      <tr
+        v-for="(row, rowIndex) in foot"
+        :key="String(row?.key) || `row-foot-${rowIndex}`"
+      >
+        <td v-for="cell in row.cells">{{ cell }}</td>
+      </tr>
+    </tfoot>
   </table>
 </template>

@@ -1,5 +1,6 @@
 export interface vTableRow {
-  cells: any[];
+  cells: Array<string | number>;
+  [key: string]: unknown;
 }
 
 export interface vTableProps {
