@@ -1,8 +1,11 @@
 {
-  "name": "app",
+  "name": "@shipments/ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "exports": {
+    ".": "./src/components/index.ts"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
