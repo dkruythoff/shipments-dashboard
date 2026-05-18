@@ -2,6 +2,7 @@ services:
 
   api:
     image: denoland/deno:latest
+    restart: unless-stopped
     volumes:
       - ./services/api:/app
     ports:
@@ -11,17 +12,23 @@ services:
 
   app-vue:
     image: denoland/deno:latest
+    restart: unless-stopped
+    depends_on: 
+      - api
     volumes:
       - ./services/app-vue:/app
+      - ./services/styleguide-vue/src/components:/app/src/v-components
     ports:
       - 5173:5173
     working_dir: /app
     command: deno task dev
 
   styleguide-vue:
-    image: node:lts-alpine
+    build: ./services/styleguide-vue
+    restart: unless-stopped
     volumes:
       - ./services/styleguide-vue:/app
+      - /app/node_modules
     ports:
       - 6006:6006
     working_dir: /app
