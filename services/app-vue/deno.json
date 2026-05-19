@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "@shipments/ui": "../styleguide-vue/src/components/index.ts"
+  }
+}

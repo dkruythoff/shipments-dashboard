@@ -1,2 +1,2 @@
 export const getAll = () =>
-  fetch("//localhost:8000/shipments").then((res) => res.json());
+  fetch(`${import.meta.env.VITE_API_BASE}/shipments`).then((res) => res.json());

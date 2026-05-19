@@ -17,10 +17,13 @@ services:
       - api
     volumes:
       - ./services/app-vue:/app
-      - ./services/styleguide-vue/src/components:/app/src/v-components
+      - ./services/styleguide-vue/src/components:/ui
     ports:
       - 5173:5173
     working_dir: /app
+    environment: 
+      SHIPMENTS_UI_PATH: /ui
+      VITE_API_BASE: //localhost:8000
     command: deno task dev
 
   styleguide-vue:
