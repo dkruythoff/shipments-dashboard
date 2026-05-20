@@ -44,6 +44,6 @@ services:
     volumes:
       - ./services/styleguide-vue:/app
       - /app/node_modules
-    command: npm run test
+    command: npx vitest --browser.headless -u
     tty: true
     stdin_open: true

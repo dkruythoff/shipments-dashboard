@@ -1,17 +1,22 @@
-import { mount } from "@vue/test-utils";
+import { render } from "vitest-browser-vue";
 import { expect, test } from "vitest";
+import { page } from "vitest/browser";
 import vTable from "./vTable.vue";
 import { defaults } from "./mocks";
 
-test("renders head, body and foot rows", () => {
-  const wrapper = mount(vTable, { props: defaults });
+test("renders head, body and foot rows", async () => {
+  const screen = await render(vTable, { props: defaults });
 
-  expect(wrapper.findAll("thead tr")).toHaveLength(defaults.head!.length);
-  expect(wrapper.findAll("tbody tr")).toHaveLength(defaults.body.length);
-  expect(wrapper.findAll("tfoot tr")).toHaveLength(defaults.foot!.length);
+  await expect.element(screen.getByRole("table")).toBeInTheDocument();
+  expect(screen.getByRole("table").elements()).toHaveLength(1);
+
+  await expect.element(page.getByRole("table")).toMatchScreenshot();
 });
 
-test("omits thead when no head prop", () => {
-  const wrapper = mount(vTable, { props: { body: defaults.body } });
-  expect(wrapper.find("thead").exists()).toBe(false);
+test("omits thead when no head prop", async () => {
+  const screen = await render(vTable, { props: { body: defaults.body } });
+
+  expect(screen.getByRole("rowgroup").elements()).toHaveLength(1);
+
+  await expect.element(page.getByRole("table")).toMatchScreenshot();
 });

@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest --browser.headless"
+    "test": "vitest run --browser.headless",
+    "test:update": "vitest run --browser.headless -u"
   },
   "dependencies": {
     "vue": "^3.5.32"
@@ -20,16 +21,16 @@
   "devDependencies": {
     "@storybook/vue3-vite": "^10.4.0",
     "@types/node": "^24.12.2",
-    "@vitejs/plugin-vue": "^6.0.6",
+    "@vitejs/plugin-vue": "^6.0.7",
     "@vitest/browser": "^4.1.6",
     "@vitest/browser-playwright": "^4.1.6",
-    "@vue/test-utils": "^2.4.10",
     "@vue/tsconfig": "^0.9.1",
     "playwright": "^1.60.0",
     "storybook": "^10.4.0",
     "typescript": "~6.0.2",
     "vite": "^8.0.10",
     "vitest": "^4.1.6",
+    "vitest-browser-vue": "^2.1.0",
     "vue-tsc": "^3.2.7"
   }
 }
