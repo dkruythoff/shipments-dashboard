@@ -5,7 +5,7 @@ defineProps<vNavigationProps>();
 </script>
 
 <template>
-  <ul v-if="nodes.length">
+  <ul v-if="nodes.length" data-testid="v-navigation">
     <li v-for="node in nodes">
       <component
         :is="node.href ? 'a' : 'button'"
