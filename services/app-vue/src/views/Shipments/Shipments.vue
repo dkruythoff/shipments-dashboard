@@ -1,7 +1,24 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { vTable, type vTableProps } from "@shipments/ui";
+import {
+  vPageShipmentsList,
+  type vNavigationProps,
+  type vPageShipmentsListProps,
+  type vTableProps,
+} from "@shipments/ui";
 import * as api from "../../api";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const navigationData: vNavigationProps = {
+  nodes: [
+    {
+      label: "Shipments",
+      action: () => router.push("/shipments"),
+    },
+  ],
+};
 
 const shipments = ref([]);
 api.shipments.getAll().then((res) => (shipments.value = res));
@@ -21,9 +38,15 @@ const tableData = computed<vTableProps | undefined>(() => {
     head,
   };
 });
+
+const shipmentListData = computed((): vPageShipmentsListProps => {
+  return {
+    shipments: tableData.value,
+    navigation: navigationData,
+  };
+});
 </script>
 
 <template>
-  Shipments
-  <vTable v-if="tableData" v-bind="tableData" />
+  <vPageShipmentsList v-bind="shipmentListData" />
 </template>
