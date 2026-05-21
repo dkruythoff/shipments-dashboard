@@ -8,6 +8,7 @@ export default defineConfig({
     include: ["vue"],
   },
   test: {
+    exclude: ["node_modules/**", "scripts/**"],
     browser: {
       enabled: true,
       headless: true,

@@ -7,6 +7,7 @@
     ".": "./src/components/index.ts"
   },
   "scripts": {
+    "add-component": "node scripts/add-component",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest run --browser.headless",
