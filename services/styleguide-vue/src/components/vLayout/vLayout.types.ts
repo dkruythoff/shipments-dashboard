@@ -1,7 +1,7 @@
-import type { Slot } from "vue";
+import type { VNode } from "vue";
 
 export interface vLayoutSlots {
-  header?: Slot | string;
-  aside?: Slot | string;
-  main?: Slot | string;
+  header?: (() => VNode[]) | string;
+  aside?: (() => VNode[]) | string;
+  main?: (() => VNode[]) | string;
 }
