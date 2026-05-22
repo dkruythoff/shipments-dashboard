@@ -1,4 +1,10 @@
 import { DatabaseSync } from "node:sqlite";
+import {
+  ShipmentSchema,
+  ShipmentStatus,
+  ShipmentStatusOptions,
+} from "../types/index.ts";
+
 const database = new DatabaseSync(":memory:");
 
 database.exec(`
@@ -21,19 +27,18 @@ Testcountry`;
 const destination = `Destination Lane 56
 67890 Testage
 FooBar`;
-const statusOptions = ["pending", "transit", "delayed", "delivered"] as const;
 
-insert.run(origin, destination, statusOptions[0]);
-insert.run(origin, destination, statusOptions[1]);
-insert.run(origin, destination, statusOptions[2]);
-insert.run(origin, destination, statusOptions[3]);
+insert.run(origin, destination, ShipmentStatusOptions[0]);
+insert.run(origin, destination, ShipmentStatusOptions[1]);
+insert.run(origin, destination, ShipmentStatusOptions[2]);
+insert.run(origin, destination, ShipmentStatusOptions[3]);
 
 export const getAll = () => {
   const query = database.prepare("SELECT * FROM shipments");
-  return query.all();
+  return ShipmentSchema.array().parse(query.all());
 };
 
-export const getByStatus = (status: (typeof statusOptions)[number]) => {
+export const getByStatus = (status: ShipmentStatus) => {
   const query = database.prepare("SELECT * FROM shipments WHERE status = ?");
-  return query.all(status);
+  return ShipmentSchema.array().parse(query.all(status));
 };

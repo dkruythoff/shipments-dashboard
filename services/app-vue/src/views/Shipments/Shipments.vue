@@ -8,6 +8,7 @@ import {
 } from "@shipments/ui";
 import * as api from "../../api";
 import { useRouter } from "vue-router";
+import type { Shipment } from "@shipments/types";
 
 const router = useRouter();
 
@@ -20,7 +21,7 @@ const navigationData: vNavigationProps = {
   ],
 };
 
-const shipments = ref([]);
+const shipments = ref<Shipment[]>([]);
 api.shipments.getAll().then((res) => (shipments.value = res));
 
 const tableData = computed<vTableProps | undefined>(() => {
