@@ -1,18 +1,24 @@
-# Shipment dashboard
+# Shipment dashboard: A polyglot architecture & integration showcase
 
 A code showcase and playground for several different front- and back-ends. 
 Meant to display and log my architectural choices for web projects.
 
 ## Architecture
-Monorepo consisting of the following services:
-- api: A REST API that delivers shipment data - runs on port 8000
-- styleguide-vue: A Vue component library with a Storybook showcase - runs on port 6006
-- app-vue: A Vue app which consumes the API data and uses the styleguide components to display a shipments dashboard - runs on port 5173
+A modular monorepo designed for pluggable frontend and backend services. Current baseline implementation includes:
+
+* **api/** — A REST API delivering shipment data contracts (Port 8000).
+* **styleguide-vue/** — A Vue-based component library and isolated Storybook showcase (Port 6006).
+* **app-vue/** — A Vue SPA consuming the API contracts and styleguide modules to render the dashboard (Port 5173).
 
 ## Development
-Run `docker compose up` to start all the services, including the `styleguide-vue-test-watch` service, which will continously run tests on the styleguide, including visual regression tests, and auto-updating screenshots.
+The entire ecosystem is orchestrated via Docker Compose.
 
-To only run the setup, use the following instead: 
+To spin up the default development environment (including continuous test-watchers and visual regression testing modules):
+
+`docker compose up`
+
+To boot only the core application stack without background automated testing layers:
+
 `docker compose up api app-vue styleguide-vue`
 
 ## Prerequisites
@@ -20,11 +26,12 @@ To only run the setup, use the following instead:
 - Docker Compose
 
 ## Roadmap
-The following additions are planned.
-- CSS stylesheet
-- Add React app
-- Add Nuxt app
-- Research adding Tailwind styling
+- Set up shared CSS foundation
+- Port frontend to React
+- Port frontend to Nuxt
+- Keep contracts, styling, and semantics aligned across implementations
+- Experiment with Tailwind styling alongside the CSS setup
+- Stress-test abstractions with more complex workflows
 
 ## Contributors
 - [Darius Kruythoff](https://linkedin.com/in/dkruythoff)
