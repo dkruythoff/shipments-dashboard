@@ -8,6 +8,8 @@ services:
     ports:
       - 8000:8000
     working_dir: /app
+    environment:
+      - CORS_ORIGIN: http://localhost:5173
     command: deno task dev
 
   app-vue:
