@@ -1,14 +1,13 @@
 services:
 
   api:
-    image: denoland/deno:latest
+    build: ./services/api
     restart: unless-stopped
     user: 1000:1000
     volumes:
       - ./services/api:/app
     ports:
       - 8000:8000
-    working_dir: /app
     environment:
       CORS_ORIGIN: http://localhost:5173
     command: deno task dev
@@ -52,3 +51,6 @@ services:
     command: npx vitest --browser.headless -u
     tty: true
     stdin_open: true
+
+volumes:
+  deno-cache:
