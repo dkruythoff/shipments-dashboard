@@ -11,7 +11,7 @@ defineProps<vTableProps>();
         v-for="(row, rowIndex) in head"
         :key="String(row?.key) || `row-head-${rowIndex}`"
       >
-        <td v-for="cell in row.cells">{{ cell }}</td>
+        <th v-for="cell in row.cells">{{ cell }}</th>
       </tr>
     </thead>
     <tbody>
