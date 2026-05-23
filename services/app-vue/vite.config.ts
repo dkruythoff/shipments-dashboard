@@ -8,6 +8,7 @@ export default defineConfig({
     alias: {
       "@shipments/ui":
         process.env.SHIPMENTS_UI_PATH || "../styleguide-vue/src/components",
+      "@shipments/css": `${process.env.SHIPMENTS_CSS_PATH || "/css"}/index.css`,
       "@shipments/types": process.env.SHIPMENTS_TYPES_PATH || "../api/types",
     },
   },

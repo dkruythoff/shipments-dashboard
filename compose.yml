@@ -21,10 +21,12 @@ services:
       - ./services/app-vue:/app
       - ./services/api/types:/types
       - ./services/styleguide-vue/src/components:/ui
+      - ./shared/css:/css
     ports:
       - 5173:5173
     working_dir: /app
     environment: 
+      SHIPMENTS_CSS_PATH: /css
       SHIPMENTS_UI_PATH: /ui
       SHIPMENTS_TYPES_PATH: /types
       VITE_API_BASE: //localhost:8000
@@ -35,10 +37,12 @@ services:
     restart: unless-stopped
     volumes:
       - ./services/styleguide-vue:/app
+      - ./shared/css:/css
       - /app/node_modules
     ports:
       - 6006:6006
-    working_dir: /app
+    environment:
+      SHIPMENTS_CSS_PATH: /css
     command: npm run storybook
 
   styleguide-vue-test-watch:
@@ -47,7 +51,10 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./services/styleguide-vue:/app
+      - ./shared/css:/css
       - /app/node_modules
+    environment:
+      SHIPMENTS_CSS_PATH: /css
     command: npx vitest --browser.headless -u
     tty: true
     stdin_open: true

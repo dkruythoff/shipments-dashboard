@@ -4,10 +4,16 @@ import { playwright } from "@vitest/browser-playwright";
 
 export default defineConfig({
   plugins: [vue()],
+  resolve: {
+    alias: {
+      "@shipments/css": `${process.env.SHIPMENTS_CSS_PATH || "/css"}/index.css`,
+    },
+  },
   optimizeDeps: {
     include: ["vue"],
   },
   test: {
+    setupFiles: ["./src/test-setup.ts"],
     exclude: ["node_modules/**", "scripts/**"],
     browser: {
       enabled: true,
