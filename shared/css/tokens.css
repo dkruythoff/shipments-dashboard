@@ -1,0 +1,65 @@
+:root {
+  /* Color palette */
+  --color-navy-900: #1a2332;
+  --color-navy-800: #1e2d42;
+  --color-navy-600: #2d4a6b;
+  --color-navy-200: #8fa3bc;
+  --color-navy-100: #e8edf3;
+
+  --color-surface: #f0f2f5;
+  --color-card: #ffffff;
+  --color-border: #e2e6ea;
+  --color-border-subtle: #f0f2f5;
+
+  --color-accent: #3d8ef0;
+
+  --color-status-pending: #d97706;
+  --color-status-pending-bg: #fef3c7;
+  --color-status-transit: #1e40af;
+  --color-status-transit-bg: #dbeafe;
+  --color-status-delayed: #991b1b;
+  --color-status-delayed-bg: #fee2e2;
+  --color-status-delivered: #166534;
+  --color-status-delivered-bg: #dcfce7;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-size-xs: 0.6875rem;
+  /* 11px */
+  --font-size-sm: 0.8125rem;
+  /* 13px */
+  --font-size-base: 0.9375rem;
+  /* 15px */
+  --font-size-lg: 1.375rem;
+  /* 22px */
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-5: 1.25rem;
+  /* 20px */
+  --space-6: 1.5rem;
+  /* 24px */
+
+  /* Layout */
+  --nav-width: 13.75rem;
+  /* 220px */
+  --header-height: 3rem;
+  /* 48px */
+  --border-radius-sm: 0.25rem;
+  /* 4px */
+  --border-radius-md: 0.5rem;
+  /* 8px */
+  --border-radius-pill: 0.75rem;
+  /* 12px */
+
+  /* Borders */
+  --border: 0.5px solid var(--color-border);
+  --border-subtle: 0.5px solid var(--color-border-subtle);
+}
