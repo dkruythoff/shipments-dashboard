@@ -1,3 +1,5 @@
-import { type vHeaderProps } from "../vHeader.types";
+import type { vHeaderSlots } from "../vHeader.types";
 
-export const defaults: vHeaderProps = {};
+export const defaults: vHeaderSlots = {
+  default: "Header",
+};

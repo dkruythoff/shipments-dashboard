@@ -10,7 +10,15 @@ defineProps<vPageProps>();
     <template #aside>
       <vNavigation v-if="navigation" v-bind="navigation" />
     </template>
-    <template #header><vHeader>Shipment dashboard</vHeader></template>
-    <template #main><slot></slot></template>
+    <template #header>
+      <vHeader>
+        <slot name="header"></slot>
+      </vHeader>
+    </template>
+    <template #main>
+      <div class="c-page__main">
+        <slot></slot>
+      </div>
+    </template>
   </vLayout>
 </template>

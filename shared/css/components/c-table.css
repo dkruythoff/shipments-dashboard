@@ -1,0 +1,28 @@
+.c-table {
+
+  table {
+    background-color: #fff;
+    border: var(--border);
+    border-collapse: separate;
+    border-radius: var(--border-radius-md);
+    border-spacing: 0;
+  }
+
+  & thead {
+    background-color: #f8f9fb;
+  }
+
+  & th {
+    text-align: start;
+  }
+
+  & th,
+  td {
+    padding: var(--space-4);
+  }
+
+  & tr+tr>th,
+  & tr+tr>td {
+    border-top: var(--border-subtle);
+  }
+}

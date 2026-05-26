@@ -1,0 +1,5 @@
+.c-page__main {
+  background-color: var(--color-surface);
+  height: 100%;
+  padding: var(--space-4);
+}
