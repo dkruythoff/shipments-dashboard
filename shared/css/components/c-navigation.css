@@ -1,0 +1,33 @@
+.c-navigation {
+  background-color: var(--color-navy-800);
+  min-height: 100%;
+}
+
+.c-navigation__item>* {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  background-color: transparent;
+
+  border-width: 0 0 0 .5rem;
+  border-style: solid;
+  border-color: transparent;
+
+  background-color: var(--color-navy-800);
+  color: #fff;
+
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  text-align: start;
+  text-decoration: none;
+}
+
+.c-navigation__item[data-active]>* {
+  border-left-color: var(--color-accent);
+}
+
+.c-navigation__item:hover:not([data-active])>* {
+  background-color: var(--color-navy-600);
+}

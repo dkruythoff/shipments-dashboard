@@ -10,6 +10,7 @@ export const defaults = (
     },
     {
       label: "entry 2",
+      active: true,
       action,
     },
   ],

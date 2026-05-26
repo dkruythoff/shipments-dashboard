@@ -49,8 +49,9 @@
 
   /* Layout */
   --nav-width: 13.75rem;
-  /* 220px */
-  --header-height: 3rem;
+  --narrow-max-width: calc(var(--nav-width) * 3)
+    /* 220px */
+    --header-height: 3rem;
   /* 48px */
   --border-radius-sm: 0.25rem;
   /* 4px */

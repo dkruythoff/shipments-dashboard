@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type vPageProps } from "./vPage.types";
-import { vLayout, vNavigation } from "..";
+import { vHeader, vLayout, vNavigation } from "..";
 
 defineProps<vPageProps>();
 </script>
@@ -10,7 +10,7 @@ defineProps<vPageProps>();
     <template #aside>
       <vNavigation v-if="navigation" v-bind="navigation" />
     </template>
-    <template #header> Shipment dashboard </template>
+    <template #header><vHeader>Shipment dashboard</vHeader></template>
     <template #main><slot></slot></template>
   </vLayout>
 </template>

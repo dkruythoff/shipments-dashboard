@@ -1,4 +1,5 @@
 interface vNavigationNodeBase {
+  active?: boolean;
   label: string;
 }
 
