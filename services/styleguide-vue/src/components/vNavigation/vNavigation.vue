@@ -7,8 +7,7 @@ defineProps<vNavigationProps>();
 <template>
   <ul class="c-navigation" v-if="nodes.length" data-testid="v-navigation">
     <li
-      class="c-navigation__item"
-      :data-active="node.active"
+      :class="['c-navigation__item', { 'is-active': node.active }]"
       v-for="node in nodes"
     >
       <component

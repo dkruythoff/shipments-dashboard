@@ -24,10 +24,10 @@
   text-decoration: none;
 }
 
-.c-navigation__item[data-active]>* {
+.c-navigation__item.is-active>* {
   border-left-color: var(--color-accent);
 }
 
-.c-navigation__item:hover:not([data-active])>* {
+.c-navigation__item:hover:not(.is-active)>* {
   background-color: var(--color-navy-600);
 }
