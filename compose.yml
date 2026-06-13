@@ -32,19 +32,6 @@ services:
       VITE_API_BASE: //localhost:8000
     command: deno task dev
 
-  styleguide-react:
-    build: ./services/styleguide-react
-    restart: unless-stopped
-    volumes:
-      - ./services/styleguide-react:/app
-      - ./shared/css:/css
-      - /app/node_modules
-    ports:
-      - 6007:6007
-    environment:
-      SHIPMENTS_CSS_PATH: /css
-    command: npm run storybook
-
   styleguide-vue:
     build: ./services/styleguide-vue
     restart: unless-stopped
@@ -69,6 +56,33 @@ services:
     environment:
       SHIPMENTS_CSS_PATH: /css
     command: npx vitest --browser.headless -u
+    tty: true
+    stdin_open: true
+
+  styleguide-react:
+    build: ./services/styleguide-react
+    restart: unless-stopped
+    volumes:
+      - ./services/styleguide-react:/app
+      - ./shared/css:/css
+      - /app/node_modules
+    ports:
+      - 6007:6007
+    environment:
+      SHIPMENTS_CSS_PATH: /css
+    command: npm run storybook
+
+  styleguide-react-test-watch:
+    build:
+      context: ./services/styleguide-react
+      dockerfile: Dockerfile
+    volumes:
+      - ./services/styleguide-react:/app
+      - ./shared/css:/css
+      - /app/node_modules
+    environment:
+      SHIPMENTS_CSS_PATH: /css
+    command: npx vitest --config=vitest.browser.config.ts -u
     tty: true
     stdin_open: true
 

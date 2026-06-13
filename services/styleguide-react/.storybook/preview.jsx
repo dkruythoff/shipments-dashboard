@@ -1,3 +1,4 @@
+/// <reference path="../env.d.ts" />
 import "@shipments/css";
 
 /** @type { import('@storybook/react-vite').Preview } */
