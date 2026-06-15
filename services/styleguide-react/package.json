@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "add-component": "node scripts/add-component",
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build",
     "test:browser": "vitest --config=vitest.browser.config.ts"
