@@ -38,7 +38,7 @@ if (existsSync(componentDestDir)) {
   process.exit(1);
 }
 
-const replaceComponentName = (str) =>
+const replaceComponentName = (/** @type {string} */ str) =>
   str
     .replaceAll("_componentName_", componentName)
     .replaceAll("_componentNamePrefix_", componentNamePrefix)
@@ -49,6 +49,8 @@ const replaceComponentName = (str) =>
 
 const paths = readdirSync(DIR_SRC, { recursive: true });
 paths.forEach((path) => {
+  if (typeof path !== "string") return;
+
   const fullSrcPath = normalize(join(DIR_SRC, path));
   const fullDestPath = normalize(join(DIR_DEST, replaceComponentName(path)));
 
