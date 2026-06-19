@@ -1,6 +1,7 @@
 .c-navigation {
   background-color: var(--color-navy-800);
   min-height: 100%;
+  list-style: none;
 }
 
 .c-navigation__item>* {
