@@ -1,2 +1,3 @@
 export * from "./rHeader";
-export * from './rTable';
+export * from "./rLayout";
+export * from "./rTable";
