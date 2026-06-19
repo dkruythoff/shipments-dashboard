@@ -40,10 +40,9 @@ services:
       - ./shared/css:/css
       - /app/node_modules
     ports:
-      - 600:6006
+      - 6006:6006
     environment:
       SHIPMENTS_CSS_PATH: /css
-    command: npm run storybook
 
   styleguide-vue-test-watch:
     build:
@@ -70,7 +69,6 @@ services:
       - 6007:6007
     environment:
       SHIPMENTS_CSS_PATH: /css
-    command: npm run storybook
 
   styleguide-react-test-watch:
     build:
