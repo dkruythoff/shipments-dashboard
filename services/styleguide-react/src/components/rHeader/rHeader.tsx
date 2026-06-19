@@ -1,7 +1,7 @@
 import React from "react";
-import { rHeaderProps } from "./rHeader.types";
+import { RHeaderProps } from "./rHeader.types";
 
-export const rHeader = ({ children }: rHeaderProps) => {
+export const RHeader = ({ children }: RHeaderProps) => {
   return (
     <div className="c-header" data-testid="r-header">
       {children}

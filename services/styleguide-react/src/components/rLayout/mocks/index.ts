@@ -1,6 +1,6 @@
-import { type rLayoutProps } from "../rLayout.types";
+import { type RLayoutProps } from "../rLayout.types";
 
-export const defaults: rLayoutProps = {
+export const defaults: RLayoutProps = {
   aside: "aside slot",
   header: "header slot",
   main: "main slot",

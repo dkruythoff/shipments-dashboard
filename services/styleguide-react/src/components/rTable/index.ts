@@ -1,2 +1,2 @@
 export * from "./rTable.types";
-export { rTable } from "./rTable.jsx";
+export { RTable } from "./rTable.jsx";

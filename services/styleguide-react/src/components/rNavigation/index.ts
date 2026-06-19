@@ -1,2 +1,2 @@
 export * from "./rNavigation.types";
-export { rNavigation } from "./rNavigation.jsx";
+export { RNavigation } from "./rNavigation.jsx";

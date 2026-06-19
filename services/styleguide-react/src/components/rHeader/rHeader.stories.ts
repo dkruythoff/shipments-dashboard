@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { rHeader } from "./rHeader";
+import { RHeader } from "./rHeader";
 import * as mocks from "./mocks";
 
 const meta = {
-  component: rHeader,
+  component: RHeader,
   title: "r/Header",
-} satisfies Meta<typeof rHeader>;
+} satisfies Meta<typeof RHeader>;
 
 export default meta;
 

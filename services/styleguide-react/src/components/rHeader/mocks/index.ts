@@ -1,5 +1,5 @@
-import { rHeaderProps } from "../rHeader.types";
+import { RHeaderProps } from "../rHeader.types";
 
-export const defaults: rHeaderProps = {
+export const defaults: RHeaderProps = {
   children: "Header",
 };

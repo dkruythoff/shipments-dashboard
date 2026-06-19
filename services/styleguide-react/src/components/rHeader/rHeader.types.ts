@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export interface rHeaderProps {
+export interface RHeaderProps {
   children: ReactNode;
 }

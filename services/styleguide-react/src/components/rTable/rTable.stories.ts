@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { rTable } from "./rTable";
+import { RTable } from "./rTable";
 import * as mocks from "./mocks";
 
 const meta = {
-  component: rTable,
+  component: RTable,
   title: "r/Table",
-} satisfies Meta<typeof rTable>;
+} satisfies Meta<typeof RTable>;
 
 export default meta;
 

@@ -1,14 +1,14 @@
 import { ReactNode } from "react";
 
-export interface rTableRow {
+export interface RTableRow {
   cells: Array<string | number>;
   key?: string;
   [key: string]: unknown;
 }
 
-export interface rTableProps {
-  body: rTableRow[];
+export interface RTableProps {
+  body: RTableRow[];
   caption?: ReactNode;
-  foot?: rTableRow[];
-  head?: rTableRow[];
+  foot?: RTableRow[];
+  head?: RTableRow[];
 }

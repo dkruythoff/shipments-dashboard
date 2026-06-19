@@ -1,7 +1,7 @@
 import React from "react";
-import { rNavigationProps } from "./rNavigation.types";
+import { RNavigationProps } from "./rNavigation.types";
 
-export const rNavigation = ({ nodes }: rNavigationProps) => {
+export const RNavigation = ({ nodes }: RNavigationProps) => {
   return (
     !nodes?.length ? undefined : <ul className="c-navigation" data-testid="r-navigation">
       {

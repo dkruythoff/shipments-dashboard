@@ -1,2 +1,2 @@
-export { rHeader } from "./rHeader";
+export { RHeader } from "./rHeader";
 export * from "./rHeader.types";

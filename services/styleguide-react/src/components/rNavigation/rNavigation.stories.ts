@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
-import { rNavigation } from "./rNavigation";
+import { RNavigation } from "./rNavigation";
 import * as mocks from "./mocks";
 
 const meta = {
-  component: rNavigation,
+  component: RNavigation,
   title: "r/Navigation",
-} satisfies Meta<typeof rNavigation>;
+} satisfies Meta<typeof RNavigation>;
 
 export default meta;
 

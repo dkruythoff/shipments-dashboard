@@ -1,6 +1,6 @@
-import { type rTableProps } from "../rTable.types";
+import { type RTableProps } from "../rTable.types";
 
-export const defaults: rTableProps = {
+export const defaults: RTableProps = {
   body: [
     {
       cells: [1.1, 1.2, 1.3],

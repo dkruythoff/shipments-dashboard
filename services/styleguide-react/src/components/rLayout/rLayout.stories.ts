@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { rLayout } from "./rLayout";
+import { RLayout } from "./rLayout";
 import * as mocks from "./mocks";
 
 const meta = {
-  component: rLayout,
+  component: RLayout,
   title: "r/Layout",
-} satisfies Meta<typeof rLayout>;
+} satisfies Meta<typeof RLayout>;
 
 export default meta;
 

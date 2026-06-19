@@ -1,2 +1,2 @@
 export * from "./rLayout.types";
-export { rLayout } from "./rLayout.jsx";
+export * from "./rLayout.jsx";

@@ -1,10 +1,10 @@
 import React from "react";
-import { rTableProps, rTableRow } from "./rTable.types";
+import { RTableProps, RTableRow } from "./rTable.types";
 
-const renderRows = (rows: rTableRow[], Cell: 'td' | 'th' = 'td') =>
+const renderRows = (rows: RTableRow[], Cell: 'td' | 'th' = 'td') =>
   rows.map((row) => (<tr key={row?.key || `${row.cells}`}>{row.cells.map(cell => (<Cell>{cell}</Cell>))}</tr>))
 
-export const rTable = ({ body, caption, foot, head }: rTableProps) => {
+export const RTable = ({ body, caption, foot, head }: RTableProps) => {
   return (
     <div className="scroll-h | c-table" data-testid="r-table">
       <table>

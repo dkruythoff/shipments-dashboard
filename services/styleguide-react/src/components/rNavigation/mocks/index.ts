@@ -1,8 +1,8 @@
-import { type rNavigationProps } from "../rNavigation.types";
+import { type RNavigationProps } from "../rNavigation.types";
 
 export const defaults = (
   action: () => unknown = () => {},
-): rNavigationProps => ({
+): RNavigationProps => ({
   nodes: [
     {
       label: "entry 1",

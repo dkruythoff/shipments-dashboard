@@ -1,16 +1,19 @@
 import React from "react";
-import { rLayoutProps } from "./rLayout.types";
+import { RLayoutProps } from "./rLayout.types"
 
-export const rLayout = ({
+export const RLayout = ({
+  className = "c-layout",
   header,
   aside,
-  main
-}: rLayoutProps) => {
+  main,
+  "data-testid": dataTestid = "r-layout",
+  ...props
+}: RLayoutProps) => {
   return (
-    <div className="c-layout" data-testid="r-layout">
-      <header>{header}</header>
-      <aside>{aside}</aside>
-      <main>{main}</main>
+    <div className={className} data-testid={dataTestid} {...props}>
+      {header && <header>{header}</header>}
+      {aside && <aside>{aside}</aside>}
+      {main && <main>{main}</main>}
     </div>
   );
 };

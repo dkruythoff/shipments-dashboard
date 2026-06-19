@@ -1,20 +1,20 @@
-interface rNavigationNodeBase {
+interface RNavigationNodeBase {
   active?: boolean;
   label: string;
 }
 
-interface rNavigationNodeAction extends rNavigationNodeBase {
+interface RNavigationNodeAction extends RNavigationNodeBase {
   action: () => void;
   href?: never;
 }
 
-interface rNavigationNodeLink extends rNavigationNodeBase {
+interface RNavigationNodeLink extends RNavigationNodeBase {
   action?: never;
   href: string;
 }
 
-type rNavigationNode = rNavigationNodeAction | rNavigationNodeLink;
+type RNavigationNode = RNavigationNodeAction | RNavigationNodeLink;
 
-export interface rNavigationProps {
-  nodes: rNavigationNode[];
+export interface RNavigationProps {
+  nodes: RNavigationNode[];
 }
