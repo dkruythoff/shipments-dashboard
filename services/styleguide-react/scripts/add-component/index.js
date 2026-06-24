@@ -23,6 +23,9 @@ if (!componentNameArg) {
   process.exit(1);
 }
 
+const ucfirst = (/** @type {string} */ s) =>
+  s.charAt(0).toUpperCase() + s.substring(1);
+
 const componentName = ((c) => {
   let name = c.charAt(0).toUpperCase() + c.slice(1);
   if (name.indexOf(componentNamePrefix.toUpperCase()) !== 0)
@@ -41,6 +44,7 @@ if (existsSync(componentDestDir)) {
 const replaceComponentName = (/** @type {string} */ str) =>
   str
     .replaceAll("_componentName_", componentName)
+    .replaceAll("_componentNameCapital_", ucfirst(componentName))
     .replaceAll("_componentNamePrefix_", componentNamePrefix)
     .replaceAll(
       "_componentNameNoPrefix_",
@@ -76,7 +80,19 @@ paths.forEach((path) => {
 
 const componentsIndexPath = join(DIR_DEST, "index.ts");
 
-console.log("Appending export to ", componentsIndexPath);
-appendFileSync(componentsIndexPath, `export * from './${componentName}';`);
+writeFileSync(
+  componentsIndexPath,
+  [
+    ...readFileSync(componentsIndexPath, { encoding: "utf-8" })
+      .trim()
+      .split("\n")
+      .filter((s) => !!s),
+    `export * from "./${componentName}";`,
+  ]
+    .sort()
+    .join("\n"),
+);
+console.log("Appended export to ", componentsIndexPath);
 
-console.log(`Created component '${componentName}' at ${componentDestDir}`);
+console.log(`
+Created component '${componentName}' 'at ${componentDestDir}'`);

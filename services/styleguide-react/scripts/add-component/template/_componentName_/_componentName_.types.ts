@@ -1,1 +1,1 @@
-export interface _componentName_Props {}
+export interface _componentNameCapital_Props {}

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { _componentName_ } from "./_componentName_";
+import { _componentNameCapital_ } from "./_componentName_";
 import * as mocks from "./mocks";
 
 const meta = {
-  component: _componentName_,
+  component: _componentNameCapital_,
   title: "_componentNamePrefix_/_componentNameNoPrefix_",
-} satisfies Meta<typeof _componentName_>;
+} satisfies Meta<typeof _componentNameCapital_>;
 
 export default meta;
 
