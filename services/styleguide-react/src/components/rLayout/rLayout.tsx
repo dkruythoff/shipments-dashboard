@@ -2,10 +2,10 @@ import React from "react";
 import { RLayoutProps } from "./rLayout.types"
 
 export const RLayout = ({
+  children,
   className = "c-layout",
   header,
   aside,
-  main,
   "data-testid": dataTestid = "r-layout",
   ...props
 }: RLayoutProps) => {
@@ -13,7 +13,7 @@ export const RLayout = ({
     <div className={className} data-testid={dataTestid} {...props}>
       {header && <header>{header}</header>}
       {aside && <aside>{aside}</aside>}
-      {main && <main>{main}</main>}
+      {children && <main>{children}</main>}
     </div>
   );
 };
