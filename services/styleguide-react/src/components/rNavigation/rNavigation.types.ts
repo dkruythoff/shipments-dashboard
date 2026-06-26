@@ -1,6 +1,7 @@
 interface RNavigationNodeBase {
   active?: boolean;
   label: string;
+  key?: string;
 }
 
 interface RNavigationNodeAction extends RNavigationNodeBase {
