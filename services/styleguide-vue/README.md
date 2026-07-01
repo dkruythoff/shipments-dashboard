@@ -19,6 +19,7 @@ Use the component generator to scaffold a new component:
 `docker compose run styleguide-vue npm run add-component -- <ComponentName>`
 
 ## Components
+- **vHeader** — page header element
 - **vLayout** — page layout with header, aside, and main slots
 - **vNavigation** — sidebar navigation supporting links and actions
 - **vPage** — full page composition combining vLayout and vNavigation
