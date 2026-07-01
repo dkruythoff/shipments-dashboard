@@ -1,4 +1,3 @@
-import React from "react";
 import { RLayoutProps } from "./rLayout.types"
 
 export const RLayout = ({

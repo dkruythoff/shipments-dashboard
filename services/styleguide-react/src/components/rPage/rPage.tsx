@@ -1,4 +1,3 @@
-import React from "react";
 import { RPageProps } from "./rPage.types";
 import { RLayout } from "../rLayout";
 import { RNavigation } from "../rNavigation";

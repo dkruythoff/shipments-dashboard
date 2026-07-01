@@ -1,4 +1,3 @@
-import React from "react";
 import { RNavigationProps } from "./rNavigation.types";
 
 export const RNavigation = ({ nodes }: RNavigationProps) => {

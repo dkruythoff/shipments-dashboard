@@ -1,4 +1,3 @@
-import React from "react";
 import { RTableProps, RTableRow } from "./rTable.types";
 
 const renderRows = (rows: RTableRow[], Cell: 'td' | 'th' = 'td') =>

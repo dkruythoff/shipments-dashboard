@@ -1,4 +1,3 @@
-import React from "react";
 import { RHeaderProps } from "./rHeader.types";
 
 export const RHeader = ({ children }: RHeaderProps) => {

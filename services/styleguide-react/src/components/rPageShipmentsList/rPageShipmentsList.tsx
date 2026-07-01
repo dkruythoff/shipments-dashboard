@@ -1,4 +1,3 @@
-import React from "react";
 import { RPageShipmentsListProps } from "./rPageShipmentsList.types";
 import { RPage, RTable } from "..";
 
