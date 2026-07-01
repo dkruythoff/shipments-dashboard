@@ -9,6 +9,7 @@ A modular monorepo designed for pluggable frontend and backend services. Current
 * **api/** — A REST API delivering shipment data contracts (Port 8000).
 * **styleguide-vue/** — A Vue-based component library and isolated Storybook showcase (Port 6006).
 * **app-vue/** — A Vue SPA consuming the API contracts and styleguide modules to render the dashboard (Port 5173).
+* **styleguide-react/** — A Vue-based component library and isolated Storybook showcase (Port 6007).
 
 ## Development
 The entire ecosystem is orchestrated via Docker Compose.
@@ -28,6 +29,7 @@ To boot only the core application stack without background automated testing lay
 ## Roadmap
 - Set up shared CSS foundation
 - Port frontend to React
+- Add static HTML rendering to the API through content header negotiation
 - Port frontend to Nuxt
 - Keep contracts, styling, and semantics aligned across implementations
 - Experiment with Tailwind styling alongside the CSS setup
