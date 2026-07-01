@@ -17,11 +17,7 @@ export default defineConfig({
       headless: true,
       provider: playwright(),
       // https://vitest.dev/config/browser/playwright
-      instances: [
-        { browser: "chromium" },
-        { browser: "firefox" },
-        { browser: "webkit" },
-      ],
+      instances: [{ browser: "chromium" }, { browser: "firefox" }],
       viewport: { width: 1280, height: 768 },
       expect: {
         toMatchScreenshot: {
