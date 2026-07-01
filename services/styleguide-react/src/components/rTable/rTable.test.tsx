@@ -14,7 +14,7 @@ test("renders head, body and foot rows", async () => {
 });
 
 test("omits thead when no head prop", async () => {
-  const screen = await render(RTable({ body: defaults.body }));
+  const screen = await render(<RTable body={defaults.body} />);
 
   expect(screen.getByRole("rowgroup").elements()).toHaveLength(1);
 
