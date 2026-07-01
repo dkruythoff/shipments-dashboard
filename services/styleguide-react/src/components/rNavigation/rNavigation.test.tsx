@@ -6,7 +6,7 @@ import { defaults } from "./mocks";
 
 test("renders as expected", async () => {
   const props = defaults(vi.fn());
-  await render(RNavigation(props));
+  await render(<RNavigation {...props} />);
 
   await page.getByRole("button").click();
   expect(props.nodes[1].action).toHaveBeenCalled();

@@ -5,7 +5,7 @@ import { RTable } from "./rTable";
 import { defaults } from "./mocks";
 
 test("renders head, body and foot rows", async () => {
-  const screen = await render(RTable(defaults));
+  const screen = await render(<RTable {...defaults} />);
 
   await expect.element(screen.getByRole("table")).toBeInTheDocument();
   expect(screen.getByRole("table").elements()).toHaveLength(1);

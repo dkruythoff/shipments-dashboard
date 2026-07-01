@@ -1,13 +1,13 @@
 import { render } from "vitest-browser-react";
 import { expect, test } from "vitest";
 import { page } from "vitest/browser";
-import { RPage } from "./rPage";
+import { RPageShipmentsList } from "./rPageShipmentsList";
 import { defaults } from "./mocks";
 
 test("renders as expected", async () => {
-  await render(RPage(defaults));
+  await render(<RPageShipmentsList {...defaults} />);
 
   await expect
-    .element(page.getByTestId("r-page"))
+    .element(page.getByTestId("r-page-shipment-list"))
     .toMatchScreenshot();
 });

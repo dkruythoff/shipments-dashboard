@@ -1,11 +1,11 @@
 import { render } from "vitest-browser-react";
 import { expect, test } from "vitest";
 import { page } from "vitest/browser";
-import { RHeader } from "./rHeader";
+import { RLayout } from "./rLayout";
 import { defaults } from "./mocks";
 
 test("renders as expected", async () => {
-  await render(RHeader(defaults));
+  await render(<RLayout {...defaults} />);
 
-  await expect.element(page.getByTestId("r-header")).toMatchScreenshot();
+  await expect.element(page.getByTestId("r-layout")).toMatchScreenshot();
 });
