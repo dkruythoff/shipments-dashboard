@@ -7,5 +7,5 @@ import { defaults } from "./mocks";
 test("renders as expected", async () => {
   await render(vHeader, { props: defaults });
 
-  await expect.element(page.getByText("vHeader")).toMatchScreenshot();
+  await expect.element(page.getByTestId("v-header")).toMatchScreenshot();
 });

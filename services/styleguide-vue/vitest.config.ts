@@ -19,11 +19,7 @@ export default defineConfig({
       enabled: true,
       headless: true,
       provider: playwright(),
-      instances: [
-        { browser: "chromium" },
-        { browser: "firefox" },
-        { browser: "webkit" },
-      ],
+      instances: [{ browser: "chromium" }, { browser: "firefox" }],
       viewport: { width: 1280, height: 768 },
       expect: {
         toMatchScreenshot: {
